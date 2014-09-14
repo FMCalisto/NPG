@@ -30,6 +30,6 @@ A Quick Guide to Networking Software
 
 12) Make your server a concurrent server;
 
-This is the task so that the code on this directory serves for propose.
+Those are the tasks so that the code on this directory serves for propose.
 
 Understand the task and try to implement and modify the code as you wish.
