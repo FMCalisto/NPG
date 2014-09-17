@@ -11,6 +11,19 @@ int main(void)
 	
 	struct sockaddr_in addr;
 	
+	fd = socket(AF_INET, SOCK_DGRAM, 0); // UDP socket
+	if(fd == 1)
+	{
+		exit(1); // error
+	}
+	
+	memset((void*)&addr, (int)'\0', sizeof(addr));
+	addr.sin_family = AF_INET;
+	addr.sin_addr.s_addr = "tejo.ist.utl.pt";
+	addr.sin_port = htons(5800);
+	
+	n = sendto(fd, "Hello!\n", 7, 0, (struct sockaddr*)&addr, sizeof(addr));
+	
 	char buffer[128];
 	
 	addrlen = sizeof(addr);
