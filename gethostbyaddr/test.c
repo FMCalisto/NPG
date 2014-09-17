@@ -39,11 +39,11 @@ int main(void)
 	h = gethostbyaddr((char*)&addr.sin_addr, sizeof(struct in_addr), AF_INET);
 	if(h == NULL)
 	{
-		printf("sent by [%s:%d]\n", inet_ntoa(addr.sin_addr), nthohs(addr.sin_port));
+		printf("sent by [%s:%hu]\n", inet_ntoa(addr.sin_addr), nthohs(addr.sin_port));
 	}
 	else
 	{
-		printf("sent by [%s:%d]\n", h->h_name, ntohs(addr.sin_port));
+		printf("sent by [%s:%hu]\n", h->h_name, ntohs(addr.sin_port));
 	}
 	
 	exit(0);
