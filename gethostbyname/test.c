@@ -10,7 +10,7 @@ int main(void)
 	struct hostent *h;
 	struct in_addr *a;
 	
-	if((h = gethostbyname("tejo")) == NULL)
+	if((h = gethostbyname("localhost")) == NULL)
 	{
 		exit(1); // error
 	}

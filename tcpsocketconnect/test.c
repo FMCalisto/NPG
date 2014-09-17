@@ -19,7 +19,7 @@ int main(void)
 	
 	memset((void*)&addr, (int)'\0', sizeof(addr));
 	addr.sin_family = AF_INET;
-	addr.sin_addr.s_addr = "tejo.ist.utl.pt";
+	addr.sin_addr.s_addr = "localhost";
 	addr.sin_port = htons(5800);
 	
 	n = connect(fd, (struct sockaddr*)&addr, sizeof(addr));
