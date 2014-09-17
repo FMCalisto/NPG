@@ -12,7 +12,7 @@ int main(void)
 	
 	struct sockaddr_in addr;
 	
-	//char buffer[128];
+	char buffer[128];
 	struct hostent *h; // this can be roung
 	
 	fd = socket(AF_INET, SOCK_DGRAM, 0); // UDP socket
@@ -28,8 +28,6 @@ int main(void)
 	
 	n = sendto(fd, "Hello!\n", 7, 0, (struct sockaddr*)&addr, sizeof(addr));
 	
-	char buffer[128];
-	
 	addrlen = sizeof(addr);
 	n = recvfrom(fd, buffer, 128, 0, (struct sockaddr*)&addr, &addrlen);
 	
@@ -41,11 +39,11 @@ int main(void)
 	h = gethostbyaddr((char*)&addr.sin_addr, sizeof(struct in_addr), AF_INET);
 	if(h == NULL)
 	{
-		printf("sent by [%s:%hu]\n", inet_ntoa(addr.sin_addr), nthohs(addr.sin_port));
+		printf("sent by [%s:%d]\n", inet_ntoa(addr.sin_addr), nthohs(addr.sin_port));
 	}
 	else
 	{
-		printf("sent by [%s:%hu]\n", h->h_name, ntohs(addr.sin_port));
+		printf("sent by [%s:%d]\n", h->h_name, ntohs(addr.sin_port));
 	}
 	
 	exit(0);
