@@ -13,7 +13,7 @@ int main(void)
 	struct sockaddr_in addr;
 	
 	char buffer[128];
-	char h, h_name; // this can be roung
+	char h; // this can be roung
 	
 	fd = socket(AF_INET, SOCK_DGRAM, 0); // UDP socket
 	if(fd == 1)
