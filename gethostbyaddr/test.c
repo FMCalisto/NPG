@@ -13,7 +13,7 @@ int main(void)
 	struct sockaddr_in addr;
 	
 	char buffer[128];
-	struct h *gethostbyaddr(const void *addr, int len, int type); // this can be roung
+	struct hostent *h; // this can be roung
 	
 	fd = socket(AF_INET, SOCK_DGRAM, 0); // UDP socket
 	if(fd == 1)
