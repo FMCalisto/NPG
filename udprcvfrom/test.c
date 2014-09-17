@@ -27,7 +27,7 @@ int main(void)
 	char buffer[128];
 	
 	addrlen = sizeof(addr);
-	n = rcvfrom(fd, buffer, 128, 0, (struct sockaddr*)&addr, &addrlen);
+	n = recvfrom(fd, buffer, 128, 0, (struct sockaddr*)&addr, &addrlen);
 	
 	if (n == 1)
 	{
