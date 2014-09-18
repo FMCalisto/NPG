@@ -108,7 +108,7 @@ int main(void)
 						exit(1); // error
 					}
 
-					printf("write buffer in afd %d\n", &afd);
+					printf("Write buffer in AFD: %d\n", &afd);
 				}
 
 				else
